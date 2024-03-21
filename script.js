@@ -22,7 +22,8 @@ function searchMeal(e) {
             .then(data => {
                 resultHeading.innerHTML = `<h2>Search results for <strong style="color:#5fbaa7">'${term}'</strong>:</h2>`;
                 if (data.meals === null) {
-                    resultHeading.innerHTML = `<p>Thera are no search results! TRY again</p>`
+                    resultHeading.innerHTML = `<p>Thera are no search results! TRY again</p>`;
+                    mealsEl.innerHTML = '';
                 } else {
                     mealsEl.innerHTML = data.meals.map(meal => `
                     <div class="meal">
